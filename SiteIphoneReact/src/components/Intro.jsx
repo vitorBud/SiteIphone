@@ -12,11 +12,22 @@ function Intro (){
             <div className=" max-w-5xl mx-auto text-center">
                 <h1 className=" text-6xl md:text-8xl font-bold mb-6">Iphone 17 Pro</h1>
                 <p className=" text-2xl md:text-3xl mb-4 text-gradient font-bold">Titânio.Tão Forte. Tão Leve. Tão Pro.</p>
-                <p className=" text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto">O designe mais refinado que ja criamos, Titânio de grau aeroespacial. Chip A18 Pro. Sistema de câmera Pro revolucionario</p>
+                <p className=" text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto">O design mais refinado que ja criamos, Titânio de grau aeroespacial. Chip A18 Pro. Sistema de câmera Pro revolucionario</p>
             </div>
-            <div>
-                <button>Compre agora</button>
-                <button>Saiba mais</button>
+            <div className="flex flex-col  md:flex-row gap-4 justify-center items-center mb-16">
+                <button className=" bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-full text-white text-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg shadow-blue-500/50 cursor-pointer">Compre agora</button>
+                <button className=" border-2 border-white rounded-full hover:bg-white hover:text-black px-8 py-4 cursor-pointer font-medium transition-all duration-300 text-lg hover:scale-105 shadow-lg shadow-white/50">Saiba mais</button>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mx-auto max-w-5xl">
+                {/* funcao do js que mapeia um array(pega item por item) */}
+                {specs.map((spec, index) => (
+                    <div key={index} className="bg-gray-900 rounded-2xl p-6 hover:bg-gray-800 transition-all duration-300 hover:scale-105 cursor-pointer">
+                        <p className={`text-3xl font-bold ${spec.color}`}>{spec.value}</p>
+                        <p>{spec.label}</p>
+                    </div>
+                ))}
+
             </div>
         </section>
     )
